@@ -1,9 +1,9 @@
-from django.conf.urls import url
+from django.urls import re_path
 
 from knox import views
 
 urlpatterns = [
-    url(r'login/', views.LoginView.as_view(), name='knox_login'),
-    url(r'logout/', views.LogoutView.as_view(), name='knox_logout'),
-    url(r'logoutall/', views.LogoutAllView.as_view(), name='knox_logoutall'),
+    re_path(r'login/', views.LoginView.as_view(), name='knox_login'),
+    re_path(r'logout/', views.LogoutView.as_view(), name='knox_logout'),
+    re_path(r'logoutall/', views.LogoutAllView.as_view(), name='knox_logoutall'),
 ]
